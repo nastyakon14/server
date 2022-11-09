@@ -1,0 +1,10 @@
+import socket
+sock=socket.socket()
+sock.connect(('127.0.0.1', 1234))
+print('Соединение установлено')
+sock.send('meow meow meow'.encode('utf-8'))
+print('Сообщение отправлено')
+data=sock.recv(1024)
+sock.close()
+print(data)
+print('Соединение закрыто')
